@@ -1,2 +1,2 @@
 #!/bin/bash
-mktemp -d  holberton
+mktemp -d -t holberton
