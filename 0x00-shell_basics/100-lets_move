@@ -1,2 +1,2 @@
 #!/bin/bash
-mv holberton-system_engineering-devops/0x00-shell_basics/*[A-Z]* /tmp/u
+mv /*[A-Z]* /tmp/u
