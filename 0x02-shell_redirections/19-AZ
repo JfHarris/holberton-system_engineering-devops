@@ -1,2 +1,2 @@
 #!/bin/bash
-echo ABc | tr -s Ac Ze
+tr -s Ac Ze
