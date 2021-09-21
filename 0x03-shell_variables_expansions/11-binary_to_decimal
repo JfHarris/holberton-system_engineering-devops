@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((BINARY[base]n))
+echo $((2#BINARY))
