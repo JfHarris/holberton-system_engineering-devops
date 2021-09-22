@@ -12,5 +12,6 @@ do
 	    echo $m
 	    m=$((m+1))
 	done
+	m=1
 	h=$(( h + 1 ))
 done
