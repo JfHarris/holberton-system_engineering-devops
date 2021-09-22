@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Until loop printing "Holberton School" 10 times
+i=0
+until [ ! $a -le 10 ]
+do
+echo "Holberton School"
+a='expr $a + 1'
+done
