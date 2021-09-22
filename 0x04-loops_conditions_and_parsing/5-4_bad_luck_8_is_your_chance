@@ -1,4 +1,4 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 # Print "Holberton School" on 8 lines
 # Print bad luck on line 4
 # Print good luck on 8th line
