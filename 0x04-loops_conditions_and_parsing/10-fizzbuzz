@@ -5,14 +5,14 @@
 #Display "Buzz" on multiples of 5
 #if none of the above, display number
 for (( i = 1; i < 100; i++ )); do
-    if [ $((i % 3)) -eq 0] && [ $((i % 5)) -eq 0]
+    if [ $((i % 3)) -eq 0 ] && [ $((i % 5)) -eq 0 ]
     then
 	echo "FizzBuzz"
-    if [ $((i % 3)) -eq 0]
+    if [ $((i % 3)) -eq 0 ]
     then
 	echo "Fizz"
     fi
-    if [ $(( i % 5)) -eq 0]
+    if [ $(( i % 5)) -eq 0 ]
 	then
 	    echo "Buzz"
     fi
