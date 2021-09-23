@@ -12,7 +12,7 @@ for (( i = 1; i < 101; i++ )); do
     then
 	echo "Fizz"
     fi
-    if [ $(( i % 5)) -eq 0 ]
+    if [ $((i % 5)) -eq 0 ]
 	then
 	    echo "Buzz"
     fi
