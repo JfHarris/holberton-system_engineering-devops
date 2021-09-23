@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Listing all processes
 #User-based format
-ps au -u -H
+ps -a -f -aux
