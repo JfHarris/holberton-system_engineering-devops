@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Kill "To infinity and beyond"
-kill -9 | pgrep 4-to
+kill | pgrep '^4-to$'
+
