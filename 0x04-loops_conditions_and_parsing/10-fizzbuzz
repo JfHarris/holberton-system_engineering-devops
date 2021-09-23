@@ -1,6 +1,8 @@
-#!/usr/bin env bash
+#!/usr/bin/ env bash
 #Display numbers 1-100
 #Display "FizzBuzz" on multiples of 3 & 5
 #Display "Fizz" when number is mutiple of 3
 #Display "Buzz" on multiples of 5
 #if none of the above, display number
+for (( i = 1; i < 100; i++ ))
+do
