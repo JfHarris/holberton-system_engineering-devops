@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Gives info about file "holbertonschool"
+#Using if and else
+if [ -e holbertonschool ]
