@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Infinite loop of "To infinity and beyond"
+#"I am invincible" upon SIGTERM
+trap "echo I am invincible!!!" SIGTERM
