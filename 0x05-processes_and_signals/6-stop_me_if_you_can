@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
 # Stopping "To infinity and and beyond" without kill or killall
+pkill '^4-to$'
