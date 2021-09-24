@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 # Script that prints "Holberton School" 10 times
 # 9th line should  "Holberton School" new line "Hi"
-i=1
-while [ $i -lt 10 ]
+i=0
+while ((i < 10))
 do
     echo "Holberton School"
-    i=$(( i + 1 ))
-    if [[ i -eq 9 ]]
+    ((i++))
+    if ((i==9))
     then
-	echo "Holberton School"
-       	echo "Hi"
+	echo "Hi"
     fi
 done
