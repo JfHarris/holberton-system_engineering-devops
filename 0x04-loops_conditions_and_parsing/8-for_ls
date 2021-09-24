@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+ |#!/usr/bin/env bash
 #Displaying content of current in list format -numbers on files
 
 for i in *
 do
     echo "$i" | rev | cut -d "-" -f -1 | rev
 done
+ 
