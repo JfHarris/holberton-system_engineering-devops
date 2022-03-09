@@ -21,7 +21,7 @@ Host *
 #   ForwardX11Trusted yes                                                                                                                        
 #   RhostsRSAAuthentication no                                                                                                                   
 #   RSAAuthentication yes                                                                                                                        
-#   PasswordAuthentication no                                                                                                                   
+   PasswordAuthentication no                                                                                                                   
 #   HostbasedAuthentication no                                                                                                                   
 #   GSSAPIAuthentication no                                                                                                                      
 #   GSSAPIDelegateCredentials no                                                                                                                 
@@ -32,7 +32,9 @@ Host *
 #   AddressFamily any                                                                                                                            
 #   ConnectTimeout 0                                                                                                                             
 #   StrictHostKeyChecking ask                                                                                                                    
-#   IdentityFile ~/.ssh/school                                                                                                                 
+   IdentityFile ~/.ssh/school
+
+   IdentityFile ~/.ssh/school.pub                                                                                                                 
 #   IdentityFile ~/.ssh/id_rsa                                                                                                                   
 #   IdentityFile ~/.ssh/id_dsa                                                                                                                   
 #   Port 22                                                                                                                                      
