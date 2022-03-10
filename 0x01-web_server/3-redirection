@@ -2,7 +2,7 @@
 # Configure your Nginx server so that /
 # redirect_me is redirecting to another page.
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
-echo 'Hello World!' > /var/www/html/index.html
-sed -i '/^\tserver_name.*/a rewrite ^/redirect_me https://www.holbertonschool.com/ permanent;' /etc/nginx/sites-available/default
-service nginx restart
+sudo service nginx start
+echo 'Hello World!' | sudo tee /var/www/html/index.html
