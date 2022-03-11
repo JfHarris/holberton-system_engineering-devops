@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 # redirects to 404 page not found with message
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install nginx
-echo "Holberton School" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sed -i '/^\tserver_name.*/a error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /var/www/html/;\ninternal;\n}' /etc/nginx/sites-available/default
-service nginx restart
+sudo service nginx start
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+
+sudo touch /var/www/html/error404.html
+sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/error404.html
+
+find_this="\tlocation / {"
+replace_this="\terror_page 404 /error404.html;\n\n\tlocation /redirect_me {\n\t\treturn 301 \$scheme://https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n\n\tlocation / {"
+sudo sed -i "s@^$find_this@$replace_this@" /etc/nginx/sites-available/default
+sudo service nginx restart
