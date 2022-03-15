@@ -99,7 +99,7 @@ server-id		= 2
 #log_bin			= /var/log/mysql/mysql-bin.log
 expire_logs_days	= 14
 max_binlog_size         = 1G
-#binlog_do_db		= include_database_name
+binlog_do_db		= tyrell_corp
 #binlog_ignore_db	= include_database_name
 #
 # * InnoDB
@@ -117,31 +117,3 @@ max_binlog_size         = 1G
 # ssl-ca=/etc/mysql/cacert.pem
 # ssl-cert=/etc/mysql/server-cert.pem
 # ssl-key=/etc/mysql/server-key.pem
-innodb_data_file_path = ibdata1:128M:autoextend
-innodb_file_per_table = 1
-skip-innodb_doublewrite
-innodb_additional_mem_pool_size = 12M
-innodb_buffer_pool_size         = 256M
-innodb_log_buffer_size          = 8M
-innodb_log_file_size            = 8M
-innodb_flush_log_at_trx_commit  = 0
-innodb_flush_method             = O_DIRECT
-innodb_support_xa               = OFF
-
-
-[mysqldump]
-quick
-quote-names
-max_allowed_packet	= 16M
-
-[mysql]
-#no-auto-rehash	# faster start of mysql but no tab completition
-
-[isamchk]
-key_buffer		= 16M
-
-#
-# * IMPORTANT: Additional settings that can override those from this file!
-#   The files must end with '.cnf', otherwise they'll be ignored.
-#
-!includedir /etc/mysql/conf.d/
