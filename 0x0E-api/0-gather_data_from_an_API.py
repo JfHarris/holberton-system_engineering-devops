@@ -13,7 +13,7 @@ def employeeTasks(employeeID):
     for a given employee ID, returns information about TODO list progress
     """
     name = ''
-    tasksList = []
+    tasks = []
     tasksCounter = 0
 
     empReq = requests.get(
@@ -28,15 +28,13 @@ def employeeTasks(employeeID):
     for task in todoJSON:
         if task.get('completed') is True:
             tasksCounter += 1
-            tasksList.append(task.get('title'))
+            tasks.append(task.get('title'))
 
     print('Employee {} is done with tasks({}/{}):'.format(name,
           tasksCounter, len(todoJSON)))
 
-    for title in tasksList:
+    for title in tasks:
         print('\t {}'.format(title))
-
-    return 0
 
 if __name__ == '__main__':
     employeeTasks(sys.argv[1])
