@@ -2,25 +2,34 @@
 """
 for a given employee ID, returns information about his/her TODO list progress
 """
-if __name__ == "__main__":
+import requests
+from sys import argv
 
-    import requests
-    from sys import argv
+if __name__ == '__main__':
+    try:
+        employ_id = int(argv[1])
+    except ValueError:
+        exit()
 
-    user_src = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
-    emp = requests.get(user_src).json()
-    emp_name = emp.get('name')
-    tasks_src = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
-        argv[1])
-    comp_tasks = []
-    all_tasks = requests.get(tasks_src).json()
-    for task in all_tasks:
-        if task.get('completed') is True:
-            comp_tasks.append(task.get('title'))
+    api_url = 'https://jsonplaceholder.typicode.com'
+    user_uri = '{api}/users/{id}'.format(api=api_url, id=employ_id)
+    todo_uri = '{user_uri}/todos'.format(user_uri=user_uri)
 
-    print("Employee {} is done with tasks({}/{}):".format(
-        emp_name, len(comp_tasks), len(all_tasks)))
+    res = requests.get(user_uri).json()
 
-    if len(comp_tasks) > 0:
-        for task in comp_tasks:
-            print("\t {}".format(task))
+    employ = res.get("name")
+
+    res = requests.get(todo_uri).json()
+
+    totes = len(res)
+
+    no_task = sum([elem["completed"] is False for elem in res])
+
+    comp = totes - no_task
+
+    str = "Employee {name} is done with tasks({comp}/{totes}):"
+    print(str.format(name=employ, comp=comp, totes=totes))
+
+    for elem in res:
+        if elem.get('completed') is True:
+            print('\t', elem.get('title'))
