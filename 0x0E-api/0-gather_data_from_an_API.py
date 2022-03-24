@@ -37,6 +37,3 @@ def employeeTasks(employeeID):
         print('\t {}'.format(title))
 
     return 0
-
-if __name__ == '__main__':
-    employeeTasks(sys.argv[1])
