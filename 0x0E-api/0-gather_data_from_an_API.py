@@ -16,13 +16,13 @@ def employeeTasks(employeeID):
     tasksList = []
     tasksCounter = 0
 
-    employeeReq = requests.get(
+    empReq = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(employeeID))
     todoReq = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}/todos".
         format(employeeID))
 
-    name = employeeReq.json().get('name')
+    name = empReq.json().get('name')
     todoJSON = todoReq.json()
 
     for task in todoJSON:
@@ -34,7 +34,7 @@ def employeeTasks(employeeID):
           tasksCounter, len(todoJSON)))
 
     for title in tasksList:
-        print('     {}'.format(title))
+        print('\t {}'.format(title))
 
     return 0
 
