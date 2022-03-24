@@ -10,7 +10,7 @@ import sys
 
 def employeeTasks(employeeID):
     """
-    for a given employee ID, returns information about his/her TODO list progress
+    for a given employee ID, returns information about TODO list progress
     """
     name = ''
     tasksList = []
