@@ -34,6 +34,9 @@ def employeeTasks(employeeID):
           tasksCounter, len(todoJSON)))
 
     for title in tasksList:
-        print('\t {}'.format(title))
+        print('\t{}'.format(title))
 
     return 0
+
+if __name__ == '__main__':
+    employeeTasks(sys.argv[1])
