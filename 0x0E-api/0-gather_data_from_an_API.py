@@ -34,7 +34,7 @@ def employeeTasks(employeeID):
           tasksCounter, len(todoJSON)))
 
     for title in tasksList:
-        print('   {}'.format(title))
+        print('     {}'.format(title))
 
     return 0
 
