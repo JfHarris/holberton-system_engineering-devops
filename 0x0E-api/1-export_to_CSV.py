@@ -8,35 +8,35 @@ import requests
 from sys import argv
 
 
-def saveTasksToCSV(employeeID):
+def taskstoCSV(employeeID):
     """
     Gathering data from api and exporting to CSV
     """
     username = ''
-    allTasks = []
+    alltodo = []
 
-    employeeReq = requests.get(
+    empReq = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(employeeID))
     todoReq = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}/todos".format(
             employeeID))
 
-    username = employeeReq.json().get('username')
+    username = empReq.json().get('username')
     todoJSON = todoReq.json()
 
     for task in todoJSON:
-        taskRow = []
-        taskRow.append(employeeID)
-        taskRow.append(username)
-        taskRow.append(task.get('completed'))
-        taskRow.append(task.get('title'))
-        allTasks.append(taskRow)
+        todoRow = []
+        todoRow.append(employeeID)
+        todoRow.append(username)
+        todoRow.append(task.get('completed'))
+        todoRow.append(task.get('title'))
+        alltodo.append(todoRow)
 
     with open('{}.csv'.format(employeeID), 'w') as csvFile:
         csvWriter = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
-        csvWriter.writerows(allTasks)
+        csvWriter.writerows(alltodo)
 
     return 0
 
 if __name__ == '__main__':
-    saveTasksToCSV(argv[1])
+    taskstoCSV(argv[1])
