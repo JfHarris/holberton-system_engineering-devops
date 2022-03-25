@@ -17,7 +17,7 @@ def save_to_CSV(employeeID):
         "https://jsonplaceholder.typicode.com/users/{}/todos".format(
             employeeID))
 
-    username = empReq.json().get('username')
+    name = empReq.json().get('username')
     taskJSON = tasksReq.json()
 
     for task in taskJSON:
@@ -29,8 +29,8 @@ def save_to_CSV(employeeID):
         allTasks.append(taskInfo)
 
     with open('{}.csv'.format(employeeID), 'w') as csvFile:
-        csvWriter = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
-        csvWriter.writerows(allTasks)
+        csvInp = csv.writer(csvFile, quoting=csv.QUOTE_ALL)
+        csvInp.writerows(allTasks)
 
     return 0
 
