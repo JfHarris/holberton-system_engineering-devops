@@ -7,7 +7,7 @@ from sys import argv
 
 
 def save_to_CSV(employeeID):
-    """extend your Python script to export data in the CSV format""" 
+    """extend your Python script to export data in the CSV format"""
     name = ''
     allTasks = []
 
