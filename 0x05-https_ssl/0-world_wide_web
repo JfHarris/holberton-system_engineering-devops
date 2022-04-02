@@ -8,13 +8,13 @@ show_subD () {
     echo "The subdomain $2 is a $record and points to $new_ip"
 }
 
-if [ $# -eq 2 ]
-then
-    show_subD $1 $2
-elif [ $# -eq 1 ]
+if [ $# -eq 1 ]
 then
     show_subD $1 www
     show_subD $1 lb-01
     show_subD $1 web-01
     show_subD $1 web-02
+elif [ $# -eq 2 ]
+then
+    show_subD $1 $2
 fi
