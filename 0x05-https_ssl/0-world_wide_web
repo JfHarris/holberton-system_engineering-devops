@@ -3,8 +3,8 @@
 # points to your load-balancer IP
 show_subD () {
     record_new_ip=$(dig $2.$1 | grep -A1 'ANSWER SECTION:' | awk  '{ print $4,$5 }')
-    new_ip=$(echo $record_new_ip | awk ' { print $2 }')
     record=$(echo $record_new_ip | awk '{ print $1 }')
+    new_ip=$(echo $record_new_ip | awk ' { print $2 }')
     echo "The subdomain $2 is a $record and points to $new_ip"
 }
 
